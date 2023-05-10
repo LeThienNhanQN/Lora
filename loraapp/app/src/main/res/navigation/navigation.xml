@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/home_fragment"
+    >
+
+    <fragment
+        android:id="@+id/home_fragment"
+        android:label="fragment_home"
+        android:name="com.ldnhat.loraapp.ui.fragment.home.HomeFragment"
+        tools:layout="@layout/fragment_home"
+        >
+        <action
+            android:id="@+id/action_home_to_login"
+            app:destination="@id/signin_fragment"
+            />
+
+        <action
+            android:id="@+id/action_home_to_chart"
+            app:destination="@id/chart_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_home_to_node"
+            app:destination="@id/node_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_home_to_profile"
+            app:destination="@id/profile_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profile_fragment"
+        android:label="profile_fragment"
+        android:name="com.ldnhat.loraapp.ui.fragment.profile.ProfileFragment"
+        tools:layout="@layout/fragment_profile"
+        >
+        <action
+            android:id="@+id/action_profile_to_home"
+            app:destination="@+id/home_fragment"
+            app:popUpTo="@id/home_fragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signin_fragment"
+        android:label="fragment_signin"
+        android:name="com.ldnhat.loraapp.ui.fragment.login.LoginFragment"
+        tools:layout="@layout/fragment_login"
+        >
+        <action
+            android:id="@+id/action_login_nav_to_home"
+            app:destination="@id/home_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/chart_fragment"
+        android:label="chart_fragment"
+        android:name="com.ldnhat.loraapp.ui.fragment.chart.ChartFragment"
+        tools:layout="@layout/fragment_chart"
+        >
+        <action
+            android:id="@+id/action_chart_nav_to_home"
+            app:destination="@id/home_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/data_fragment"
+        android:label="data_fragment"
+        android:name="com.ldnhat.loraapp.ui.fragment.data.DataFragment"
+        tools:layout="@layout/fragment_data"
+        >
+
+        <argument
+            android:name="selectedNode"
+            app:argType="com.ldnhat.loraapp.common.model.Node"
+            />
+        <action
+            android:id="@+id/action_data_nav_to_node"
+            app:destination="@id/node_fragment"
+            app:popUpTo="@id/node_fragment"
+            app:popUpToInclusive="true"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/node_fragment"
+        android:label="node_fragment"
+        android:name="com.ldnhat.loraapp.ui.fragment.node.NodeFragment"
+        tools:layout="@layout/fragment_node"
+        >
+        <action
+            android:id="@+id/action_node_nav_to_home"
+            app:destination="@id/home_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+
+        <action
+            android:id="@+id/action_node_nav_to_data"
+            app:destination="@id/data_fragment"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            />
+    </fragment>
+</navigation>

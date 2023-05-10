@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+    <data>
+        <variable
+            name="loginViewModel"
+            type="com.ldnhat.loraapp.ui.fragment.login.LoginViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/loginViewNavigationBar"
+            layout="@layout/view_header_bar" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvEmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/nanum_barun_gothic"
+            android:text="@string/email"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/loginViewNavigationBar" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etInputEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_border_black_4"
+            android:fontFamily="@font/nanum_barun_gothic"
+            android:hint="@string/enter_your_email"
+            android:inputType="textEmailAddress"
+            android:maxLength="50"
+            android:maxLines="1"
+            android:paddingVertical="12dp"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorGray30"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailTitle"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDeleteEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_close_12"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/etInputEmail"
+            app:layout_constraintEnd_toEndOf="@+id/etInputEmail"
+            app:layout_constraintTop_toTopOf="@+id/etInputEmail" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvPasswordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="22dp"
+            android:fontFamily="@font/nanum_barun_gothic"
+            android:text="@string/password"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInputEmail"
+            />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etInputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/bg_border_black_4"
+            android:fontFamily="@font/nanum_barun_gothic"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:paddingVertical="12dp"
+            android:paddingStart="12dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="30dp"
+            android:paddingBottom="12dp"
+            android:textColor="@color/colorBlack"
+            android:textColorHint="@color/colorGray30"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPasswordTitle"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivDeletePassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_close_12"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/etInputPassword"
+            app:layout_constraintEnd_toEndOf="@+id/etInputPassword"
+            app:layout_constraintTop_toTopOf="@+id/etInputPassword" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="16dp"
+            android:background="@drawable/selector_blue_4"
+            android:fontFamily="@font/nanum_barun_gothic_bold"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingVertical="14dp"
+            android:paddingTop="14dp"
+            android:paddingBottom="14dp"
+            android:text="@string/sign_in"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etInputPassword"
+            android:onClick="@{() -> loginViewModel.onClicked()}"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvForgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/nanum_barun_gothic"
+            android:padding="10dp"
+            android:text="@string/forgot_your_password"
+            android:textColor="@color/colorGray30"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btSignIn" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

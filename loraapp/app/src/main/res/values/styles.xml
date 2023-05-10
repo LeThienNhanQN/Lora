@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="basicFontTextNormal">
+        <item name="android:fontFamily">@font/nanum_barun_gothic</item>
+    </style>
+
+    <style name="basicFontTextBold">
+        <item name="android:fontFamily">@font/nanum_barun_gothic_bold</item>
+    </style>
+
+    <style name="textGray50Normal">
+        <item name="android:textColor">@color/colorGray50</item>
+    </style>
+
+    <style name="textBlackNormal">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="textGray30Normal">
+        <item name="android:textColor">@color/colorGray30</item>
+    </style>
+
+    <style name="textBlackBold16">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="textBlackBold">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="MyCustomTabLayout">
+        <item name="tabTextAppearance">@style/MyCustomTextAppearance</item>
+    </style>
+
+    <style name="MyCustomTextAppearance">
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/nanum_barun_gothic_bold</item>
+        <item name="tabSelectedTextColor">@color/colorBlack</item>
+        <item name="tabTextColor">@color/colorGray30</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="textGray50Light">
+        <item name="android:textColor">@color/colorGray50</item>
+    </style>
+
+    <style name="textBlackBold14">
+        <item name="android:textSize">14sp</item>
+    </style>
+</resources>

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "662622282607",
+    "project_id": "lora-2022",
+    "storage_bucket": "lora-2022.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:662622282607:android:9f8ff88db95ac6e904fe9a",
+        "android_client_info": {
+          "package_name": "com.ldnhat.loraapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "662622282607-eejut36r0aagdo8tgf3auvi2p3u8pejh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ldnhat.loraapp",
+            "certificate_hash": "cfed0601a031869beee3f3f2367d45267fbdfcbc"
+          }
+        },
+        {
+          "client_id": "662622282607-mhfjk33vq2uc09eejmb2dgtusl7phq1b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHOGAJM3gm6J3X9gTS8YQ8SRIkvEkO-Yg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "662622282607-mhfjk33vq2uc09eejmb2dgtusl7phq1b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

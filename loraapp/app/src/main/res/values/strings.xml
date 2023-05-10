@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">LoraApp</string>
+
+    <string name="show_all">show all</string>
+    <string name="show_rent">show rent</string>
+    <string name="show_buy">show buy</string>
+
+    <string name="type_rent">Rent</string>
+    <string name="type_sale">Sale</string>
+    <string name="display_type">For %s</string>
+    <string name="display_price_monthly_rental">$%,.0f/month</string>
+    <string name="display_price">$%,.0f</string>
+    <string name="email">Email</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_password">Enter your password</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="forgot_your_password">Forgot password</string>
+    <string name="device">Device</string>
+    <string name="data">Data</string>
+    <string name="node">Node</string>
+    <string name="notification">Notification</string>
+    <string name="chart">Chart</string>
+    <string name="humidity">Humidity</string>
+    <string name="temperature">Temperature</string>
+    <string name="save">Save</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="support">Support</string>
+    <string name="terms_of_use">Terms of use</string>
+    <string name="account">Account</string>
+    <string name="turn_on">Turn on</string>
+    <string name="turn_off">Turn off</string>
+
+</resources>

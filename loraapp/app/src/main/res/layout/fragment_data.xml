@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="dataViewModel"
+            type="com.ldnhat.loraapp.ui.fragment.data.DataViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/dataNavigationBar"
+            layout="@layout/view_header_bar" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="@id/dividerLayoutBottom"
+            app:layout_constraintTop_toBottomOf="@id/dataNavigationBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constTempValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvTempLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivTempLogo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_temperature_128"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/currentTempValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@{dataViewModel.temperatureValue}"
+                        android:textColor="@color/colorBrandBlue"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/cvTempLogo"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constHumidityValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/constTempValue">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvHumidityLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivHumidityLogo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/humidity_128dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/currentHumidityValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@{dataViewModel.humidityValue}"
+                        android:textColor="@color/colorBrandBlue"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/cvHumidityLogo"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constRSSIValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/constHumidityValue">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvRSSILogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivRSSILogo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_rssi_128dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/currentRSSIValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@{dataViewModel.rssiValue}"
+                        android:textColor="@color/colorBrandBlue"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/cvRSSILogo"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constLightValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/constRSSIValue">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvLightLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivLightLogo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_light_128dp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/currentLightValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@{dataViewModel.lightValue}"
+                        android:textColor="@color/colorBrandBlue"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/cvLightLogo"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constSoilValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="3dp"
+                    app:layout_constraintTop_toBottomOf="@id/constLightValue">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/cvSoilLogo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginTop="10dp"
+                        app:cardCornerRadius="4dp"
+                        app:cardElevation="4dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivSoilLogo"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:background="@drawable/ic_soil"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/currentSoilValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="40dp"
+                        android:text="@{dataViewModel.soilValue}"
+                        android:textColor="@color/colorBrandBlue"
+                        android:textSize="30sp"
+                        app:layout_constraintStart_toEndOf="@id/cvSoilLogo"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <View
+            android:id="@+id/dividerLayoutBottom"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/colorGray10"
+            app:layout_constraintBottom_toTopOf="@+id/cvButtonTurnDevice" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvButtonTurnDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="24dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnTurnDevice"
+                ledStateBackground="@{dataViewModel.ledState}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> dataViewModel.selectedStateLed()}"
+                android:text="@{String.valueOf(dataViewModel.ledState)}"
+                buttonLedStatus="@{dataViewModel.status}"
+                android:textColor="@color/colorWhite" />
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
